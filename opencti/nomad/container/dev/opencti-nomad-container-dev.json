@@ -1,0 +1,207 @@
+{
+  "job": {
+    "opencti": {
+      "datacenters": ["dc1"],
+      "group": {
+        "container": {
+          "task": {
+            "connector-export-file-csv": {
+              "config": { "image": "opencti/connector-export-file-csv:5.2.2" },
+              "driver": "podman",
+              "env": {
+                "APP__ADMIN__EMAIL": "${OPENCTI_ADMIN_EMAIL}",
+                "APP__ADMIN__PASSWORD": "${OPENCTI_ADMIN_PASSWORD}",
+                "APP__ADMIN__TOKEN": "${OPENCTI_ADMIN_TOKEN}",
+                "APP__APP_LOGS__LOGS_LEVEL": "error",
+                "APP__PORT": 8080,
+                "ELASTICSEARCH__URL": "http://elasticsearch:9200",
+                "MINIO__ACCESS_KEY": "${MINIO_ROOT_USER}",
+                "MINIO__ENDPOINT": "minio",
+                "MINIO__PORT": 9000,
+                "MINIO__SECRET_KEY": "${MINIO_ROOT_PASSWORD}",
+                "MINIO__USE_SSL": false,
+                "NODE_OPTIONS": "--max-old-space-size = 8096",
+                "PROVIDERS__LOCAL__STRATEGY": "LocalStrategy",
+                "RABBITMQ__HOSTNAME": "rabbitmq",
+                "RABBITMQ__MANAGEMENT_SSL": false,
+                "RABBITMQ__PASSWORD": "${RABBITMQ_DEFAULT_PASS}",
+                "RABBITMQ__PORT": 5672,
+                "RABBITMQ__PORT_MANAGEMENT": 15672,
+                "RABBITMQ__USERNAME": "${RABBITMQ_DEFAULT_USER}",
+                "REDIS__HOSTNAME": "redis",
+                "REDIS__PORT": 6379,
+                "SMTP__HOSTNAME": "${SMTP_HOSTNAME}",
+                "SMTP__PORT": 25
+              },
+              "resources": { "cpu": 3000, "memory": 1024 }
+            },
+            "connector-export-file-stix": {
+              "config": { "image": "opencti/connector-export-file-stix:5.2.2" },
+              "driver": "podman",
+              "env": {
+                "APP__ADMIN__EMAIL": "${OPENCTI_ADMIN_EMAIL}",
+                "APP__ADMIN__PASSWORD": "${OPENCTI_ADMIN_PASSWORD}",
+                "APP__ADMIN__TOKEN": "${OPENCTI_ADMIN_TOKEN}",
+                "APP__APP_LOGS__LOGS_LEVEL": "error",
+                "APP__PORT": 8080,
+                "ELASTICSEARCH__URL": "http://elasticsearch:9200",
+                "MINIO__ACCESS_KEY": "${MINIO_ROOT_USER}",
+                "MINIO__ENDPOINT": "minio",
+                "MINIO__PORT": 9000,
+                "MINIO__SECRET_KEY": "${MINIO_ROOT_PASSWORD}",
+                "MINIO__USE_SSL": false,
+                "NODE_OPTIONS": "--max-old-space-size = 8096",
+                "PROVIDERS__LOCAL__STRATEGY": "LocalStrategy",
+                "RABBITMQ__HOSTNAME": "rabbitmq",
+                "RABBITMQ__MANAGEMENT_SSL": false,
+                "RABBITMQ__PASSWORD": "${RABBITMQ_DEFAULT_PASS}",
+                "RABBITMQ__PORT": 5672,
+                "RABBITMQ__PORT_MANAGEMENT": 15672,
+                "RABBITMQ__USERNAME": "${RABBITMQ_DEFAULT_USER}",
+                "REDIS__HOSTNAME": "redis",
+                "REDIS__PORT": 6379,
+                "SMTP__HOSTNAME": "${SMTP_HOSTNAME}",
+                "SMTP__PORT": 25
+              },
+              "resources": { "cpu": 3000, "memory": 1024 }
+            },
+            "connector-export-file-txt": {
+              "config": { "image": "opencti/connector-export-file-txt:5.2.2" },
+              "driver": "podman",
+              "env": {
+                "APP__ADMIN__EMAIL": "${OPENCTI_ADMIN_EMAIL}",
+                "APP__ADMIN__PASSWORD": "${OPENCTI_ADMIN_PASSWORD}",
+                "APP__ADMIN__TOKEN": "${OPENCTI_ADMIN_TOKEN}",
+                "APP__APP_LOGS__LOGS_LEVEL": "error",
+                "APP__PORT": 8080,
+                "ELASTICSEARCH__URL": "http://elasticsearch:9200",
+                "MINIO__ACCESS_KEY": "${MINIO_ROOT_USER}",
+                "MINIO__ENDPOINT": "minio",
+                "MINIO__PORT": 9000,
+                "MINIO__SECRET_KEY": "${MINIO_ROOT_PASSWORD}",
+                "MINIO__USE_SSL": false,
+                "NODE_OPTIONS": "--max-old-space-size = 8096",
+                "PROVIDERS__LOCAL__STRATEGY": "LocalStrategy",
+                "RABBITMQ__HOSTNAME": "rabbitmq",
+                "RABBITMQ__MANAGEMENT_SSL": false,
+                "RABBITMQ__PASSWORD": "${RABBITMQ_DEFAULT_PASS}",
+                "RABBITMQ__PORT": 5672,
+                "RABBITMQ__PORT_MANAGEMENT": 15672,
+                "RABBITMQ__USERNAME": "${RABBITMQ_DEFAULT_USER}",
+                "REDIS__HOSTNAME": "redis",
+                "REDIS__PORT": 6379,
+                "SMTP__HOSTNAME": "${SMTP_HOSTNAME}",
+                "SMTP__PORT": 25
+              },
+              "resources": { "cpu": 3000, "memory": 1024 }
+            },
+            "connector-import-document": {
+              "config": { "image": "opencti/connector-import-document:5.2.2" },
+              "driver": "podman",
+              "env": {
+                "APP__ADMIN__EMAIL": "${OPENCTI_ADMIN_EMAIL}",
+                "APP__ADMIN__PASSWORD": "${OPENCTI_ADMIN_PASSWORD}",
+                "APP__ADMIN__TOKEN": "${OPENCTI_ADMIN_TOKEN}",
+                "APP__APP_LOGS__LOGS_LEVEL": "error",
+                "APP__PORT": 8080,
+                "ELASTICSEARCH__URL": "http://elasticsearch:9200",
+                "MINIO__ACCESS_KEY": "${MINIO_ROOT_USER}",
+                "MINIO__ENDPOINT": "minio",
+                "MINIO__PORT": 9000,
+                "MINIO__SECRET_KEY": "${MINIO_ROOT_PASSWORD}",
+                "MINIO__USE_SSL": false,
+                "NODE_OPTIONS": "--max-old-space-size = 8096",
+                "PROVIDERS__LOCAL__STRATEGY": "LocalStrategy",
+                "RABBITMQ__HOSTNAME": "rabbitmq",
+                "RABBITMQ__MANAGEMENT_SSL": false,
+                "RABBITMQ__PASSWORD": "${RABBITMQ_DEFAULT_PASS}",
+                "RABBITMQ__PORT": 5672,
+                "RABBITMQ__PORT_MANAGEMENT": 15672,
+                "RABBITMQ__USERNAME": "${RABBITMQ_DEFAULT_USER}",
+                "REDIS__HOSTNAME": "redis",
+                "REDIS__PORT": 6379,
+                "SMTP__HOSTNAME": "${SMTP_HOSTNAME}",
+                "SMTP__PORT": 25
+              },
+              "resources": { "cpu": 3000, "memory": 1024 }
+            },
+            "connector-import-file-stix": {
+              "config": { "image": "opencti/connector-import-file-stix:5.2.2" },
+              "driver": "podman",
+              "env": {
+                "APP__ADMIN__EMAIL": "${OPENCTI_ADMIN_EMAIL}",
+                "APP__ADMIN__PASSWORD": "${OPENCTI_ADMIN_PASSWORD}",
+                "APP__ADMIN__TOKEN": "${OPENCTI_ADMIN_TOKEN}",
+                "APP__APP_LOGS__LOGS_LEVEL": "error",
+                "APP__PORT": 8080,
+                "ELASTICSEARCH__URL": "http://elasticsearch:9200",
+                "MINIO__ACCESS_KEY": "${MINIO_ROOT_USER}",
+                "MINIO__ENDPOINT": "minio",
+                "MINIO__PORT": 9000,
+                "MINIO__SECRET_KEY": "${MINIO_ROOT_PASSWORD}",
+                "MINIO__USE_SSL": false,
+                "NODE_OPTIONS": "--max-old-space-size = 8096",
+                "PROVIDERS__LOCAL__STRATEGY": "LocalStrategy",
+                "RABBITMQ__HOSTNAME": "rabbitmq",
+                "RABBITMQ__MANAGEMENT_SSL": false,
+                "RABBITMQ__PASSWORD": "${RABBITMQ_DEFAULT_PASS}",
+                "RABBITMQ__PORT": 5672,
+                "RABBITMQ__PORT_MANAGEMENT": 15672,
+                "RABBITMQ__USERNAME": "${RABBITMQ_DEFAULT_USER}",
+                "REDIS__HOSTNAME": "redis",
+                "REDIS__PORT": 6379,
+                "SMTP__HOSTNAME": "${SMTP_HOSTNAME}",
+                "SMTP__PORT": 25
+              },
+              "resources": { "cpu": 3000, "memory": 1024 }
+            },
+            "opencti-platform": {
+              "config": { "image": "opencti/platform:5.2.2" },
+              "driver": "podman",
+              "env": {
+                "APP__ADMIN__EMAIL": "${OPENCTI_ADMIN_EMAIL}",
+                "APP__ADMIN__PASSWORD": "${OPENCTI_ADMIN_PASSWORD}",
+                "APP__ADMIN__TOKEN": "${OPENCTI_ADMIN_TOKEN}",
+                "APP__APP_LOGS__LOGS_LEVEL": "error",
+                "APP__PORT": 8080,
+                "ELASTICSEARCH__URL": "http://elasticsearch:9200",
+                "MINIO__ACCESS_KEY": "${MINIO_ROOT_USER}",
+                "MINIO__ENDPOINT": "minio",
+                "MINIO__PORT": 9000,
+                "MINIO__SECRET_KEY": "${MINIO_ROOT_PASSWORD}",
+                "MINIO__USE_SSL": false,
+                "NODE_OPTIONS": "--max-old-space-size = 8096",
+                "PROVIDERS__LOCAL__STRATEGY": "LocalStrategy",
+                "RABBITMQ__HOSTNAME": "rabbitmq",
+                "RABBITMQ__MANAGEMENT_SSL": false,
+                "RABBITMQ__PASSWORD": "${RABBITMQ_DEFAULT_PASS}",
+                "RABBITMQ__PORT": 5672,
+                "RABBITMQ__PORT_MANAGEMENT": 15672,
+                "RABBITMQ__USERNAME": "${RABBITMQ_DEFAULT_USER}",
+                "REDIS__HOSTNAME": "redis",
+                "REDIS__PORT": 6379,
+                "SMTP__HOSTNAME": "${SMTP_HOSTNAME}",
+                "SMTP__PORT": 25
+              },
+              "resources": { "cpu": 3000, "memory": 1024 },
+              "template": [
+                {
+                  "change_mode": "restart",
+                  "data": "{{ with secret \"$\\{consulPath}\" }}\nCONSUL_HTTP_TOKEN=\"{{ .Data.token }}\"\nPATRONI_CONSUL_TOKEN=\"{{ .Data.token }}\"\nPATRONICTL_CONFIG_FILE=\"$\\{patroniYaml}\"\n{{ end }}\n\nCONSUL_HTTP_ADDR=\"127.0.0.1:8500\"\nTERM=\"xterm-256color\"\n",
+                  "destination": "secrets/env.txt",
+                  "env": true,
+                  "left_delimiter": "{{",
+                  "perms": "0644",
+                  "right_delimiter": "}}",
+                  "splay": "5s"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "namespace": "default",
+      "type": "batch"
+    }
+  }
+}

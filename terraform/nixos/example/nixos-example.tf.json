@@ -1,0 +1,18 @@
+{
+  "resource": {
+    "hcloud_server": {
+      "nginx": {
+        "backups": false,
+        "image": "debian-10",
+        "name": "terranix.nginx",
+        "server_type": "cx11"
+      },
+      "test": {
+        "backups": true,
+        "image": "debian-9",
+        "name": "terranix.test",
+        "server_type": "cx11"
+      }
+    }
+  }
+}

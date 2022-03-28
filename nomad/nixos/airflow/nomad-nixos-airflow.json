@@ -1,0 +1,23 @@
+{
+  "job": {
+    "airflow": {
+      "datacenters": ["dc1"],
+      "group": {
+        "nixos": {
+          "count": 1,
+          "task": {
+            "airflow": {
+              "config": {
+                "nixos": "/home/gtrun/ghq/github.com/GTrunSec/lambda-microvm-hunting-lab#nixosConfigurations.nomad-airflow"
+              },
+              "driver": "nix",
+              "resources": { "cpu": 3000, "memory": 1100 }
+            }
+          }
+        }
+      },
+      "namespace": "default",
+      "type": "batch"
+    }
+  }
+}
