@@ -1,0 +1,45 @@
+{
+  "job": {
+    "elasticsearch": {
+      "datacenters": ["dc1"],
+      "group": {
+        "container": {
+          "count": 1,
+          "network": {
+            "port": {
+              "elasticsearch": { "static": 9200, "to": 9200 },
+              "kibana": { "static": 5601, "to": 5601 }
+            }
+          },
+          "service": { "name": "kibana", "port": 5601 },
+          "task": {
+            "elasticsearch": {
+              "config": {
+                "image": "docker.elastic.co/elasticsearch/elasticsearch:7.17.1",
+                "ports": ["elasticsearch"]
+              },
+              "driver": "podman",
+              "env": {
+                "ES_JAVA_OPTS": "-Xms512m -Xmx512m",
+                "bootstrap.memory_lock": "true",
+                "discovery.type": "single-node"
+              },
+              "resources": { "cpu": 3000, "memory": 1024 }
+            },
+            "kibana": {
+              "config": {
+                "image": "docker.elastic.co/kibana/kibana:7.17.1",
+                "ports": ["kibana"]
+              },
+              "driver": "podman",
+              "env": { "ELASTICSEARCH_HOSTS": "http://127.0.0.1:9200" },
+              "resources": { "cpu": 3000, "memory": 1024 }
+            }
+          }
+        }
+      },
+      "namespace": "default",
+      "type": "batch"
+    }
+  }
+}
