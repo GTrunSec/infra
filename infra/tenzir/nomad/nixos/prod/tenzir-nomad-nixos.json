@@ -1,0 +1,65 @@
+{
+  "job": {
+    "vast": {
+      "datacenters": ["dc1"],
+      "group": {
+        "nixos": {
+          "count": 1,
+          "task": {
+            "vast": {
+              "config": {
+                "nixos": {
+                  "job": {
+                    "vast": {
+                      "datacenters": ["dc1"],
+                      "group": {
+                        "nixos": {
+                          "count": 1,
+                          "task": {
+                            "vast": {
+                              "config": {
+                                "nixos": "/nix/store/0y4l1p9lxr3mva0xr0av84afwclpay3z-source#x86_64-linux.tenzir.nixosProfiles.nomad-tenzir-vast"
+                              },
+                              "driver": "nix",
+                              "resources": { "cpu": 3000, "memory": 1100 },
+                              "volume_mount": {
+                                "destination": "/var/lib/private/vast",
+                                "read_only": false,
+                                "volume": "vast"
+                              }
+                            }
+                          },
+                          "volume": {
+                            "vast": {
+                              "read_only": false,
+                              "source": "vast",
+                              "type": "host"
+                            }
+                          }
+                        }
+                      },
+                      "namespace": "default",
+                      "type": "batch"
+                    }
+                  }
+                }
+              },
+              "driver": "nix",
+              "resources": { "cpu": 3000, "memory": 1100 },
+              "volume_mount": {
+                "destination": "/var/lib/private/vast",
+                "read_only": false,
+                "volume": "vast"
+              }
+            }
+          },
+          "volume": {
+            "vast": { "read_only": false, "source": "vast", "type": "host" }
+          }
+        }
+      },
+      "namespace": "default",
+      "type": "batch"
+    }
+  }
+}

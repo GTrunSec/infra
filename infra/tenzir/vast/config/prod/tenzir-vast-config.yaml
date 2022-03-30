@@ -1,15 +1,15 @@
 vast:
   aging-frequency: 24h
-  aging-query: ""
+  aging-query: ''
   catalog-fp-rate: 0.01
   console: automatic
-  console-format: "%^[%T.%e] %v%$"
+  console-format: '%^[%T.%e] %v%$'
   console-verbosity: info
   db-directory: vast.db
   disable-log-rotation: false
   enable-metrics: false
   endpoint: 192.168.1.1:4000
-  file-format: "[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v"
+  file-format: '[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v'
   file-verbosity: info
   log-file: vast.db/server.log
   log-queue-size: 1000000
