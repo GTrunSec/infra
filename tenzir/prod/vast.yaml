@@ -8,10 +8,10 @@ vast:
   db-directory: vast.db
   disable-log-rotation: false
   enable-metrics: false
-  endpoint: 192.168.1.1:4000
+  endpoint: 127.0.0.1:42000
   file-format: '[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v'
   file-verbosity: info
-  log-file: vast.db/server.log
+  log-file: .cache/server.log
   log-queue-size: 1000000
   log-rotation-threshold: 10MiB
   max-partition-size: 1048576
@@ -22,7 +22,7 @@ vast:
   metrics:
     file-sink:
       enable: false
-      path: vast.db/vast-metrics.log
+      path: .cache/vast-metrics.log
       real-time: false
     self-sink:
       enable: true
@@ -30,14 +30,13 @@ vast:
       slice-type: arrow
     uds-sink:
       enable: false
-      path: vast.db/vast-metrics.sock
+      path: ./cache/vast-metrics.sock
       real-time: false
       type: datagram
   node: false
   node-id: node
   plugin-dirs: []
   plugins: []
-  print-endpoint: true
   schema-dirs: []
   segments: 10
   start:
