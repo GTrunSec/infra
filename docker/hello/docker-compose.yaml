@@ -1,10 +1,10 @@
 services:
   web:
     environment:
-      FLASK_DEBUG: "true"
+      FLASK_DEBUG: 'true'
     image: ghcr.io/gtrunsec/desci/hello
     ports:
-      - 9090:9090
+    - 9090:9090
     stop_signal: SIGINT
     volumes:
-      - .:/work
+    - .:/work
